@@ -33,9 +33,13 @@ ORDER BY  surname LIMIT 10;
 ## You'd like to get the signup date of your last member. How can you retrieve this information?
 SELECT MAX(joindate) AS latest_signup FROM cd.members;
 
+#### The answer is: 2012-09-26 18:08:45
+
 ## Produce a count of the number of facilities that have a cost to guests of 10 or more.
 SELECT COUNT(*) FROM cd.facilities<br>
 WHERE guestcost >= 10;
+
+#### The Count is 6
 
 ## Produce a list of the total number of slots booked per facility in the month of September 2012. Produce an output table consisting of facility id and slots, sorted by the number of slots.
 SELECT facid, sum(slots) AS "Total Slots" FROM cd.bookings<br>
@@ -64,3 +68,5 @@ INNER JOIN cd.members ON <br>
 cd.members.memid = cd.bookings.memid <br>
 WHERE cd.members.firstname='David' <br>
 AND cd.members.surname='Farrell';
+
+#### This produces 34 rows of timestamps
